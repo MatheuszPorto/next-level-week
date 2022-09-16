@@ -1,0 +1,125 @@
+* {
+    margin : 0; /* tira as margens definidas pelo navegador*/
+    padding: 0;/* tira o preenchimento definido pelo navegador */
+    box-sizing: border-box;
+}
+ul {
+    list-style: none;
+}
+body {
+    background-image: url(assets/bg.jpg);
+    background-position: top center; /* posicionamento do fundo*/
+    background-size: 100%  auto; /* cem por cento da largura disponível. Altura automática.*/
+    background-repeat: no-repeat; /* não repete a imagem de fundo*/
+    background-color: #121214;
+}
+body * {
+    font-family: 'inter', sans-serif;
+    line-height: 160%; /*altura da linha*/
+}
+header {
+    padding-top: 32px;
+     /* coloca a imagem no centro */
+     height: calc(120px+32px);
+}
+header div {
+    width: 120px;
+    margin: auto;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    border-radius: 50%; /* arredontamento completo*/
+    display: flex;
+    padding: 4px;
+    transition: transform .3s;
+    animation:  fromTop 0.7s .7s backwards; /* 1s de delay/ backwards  */
+}
+header div:hover { /* efeito de transição.*/
+    transform: scale(1.1);
+}
+main section {
+    animation: fromBottom 0.7s 1s backwards  ;
+}
+
+main section:nth-child(1) {
+    animation-delay: 0s ;
+}
+
+main section:nth-child(2) {
+    animation-delay: .4s;
+}
+
+main section:nth-child(3) {
+    animation-delay: .8s;
+}
+header div img {
+    width: 100%; /* cem por cento da onde está imagem esta.*/
+    border-radius: 50%;    
+}
+main {
+    max-width: 580px; /*todos elementos do main vão ter essa largura maxima.*/
+    width: 90%; /* 90 por cento da largura da tela*/
+    margin : 32px auto; /* calculo automático para as margens.*/
+    display: grid;
+    gap : 24px; /* espaçamento entre os sections*/
+    margin-top:32px;
+}
+section {
+    color: white;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    padding-top:4px; 
+    border-radius: 10px;
+}
+section div {
+    background-color:#2A2634;
+    padding: 32px; /*preenchimento*/
+    padding-top: 24px; /* preenchimento do topo.*/
+    border-radius: 8px;
+}
+section h2 {
+    letter-spacing:-0.47px; /*Espaço entre as letras*/
+}
+section p{
+    letter-spacing: -0.18px;
+    color: #A1A1AA;
+}
+section ul {
+    display: flex ;
+    gap : 16px;
+    margin-top : 24px;
+    flex-wrap: wrap; /* s imagens vão se ajustando para caber dentro da página.*/
+}
+section ul li {
+    transition: transform .3s;
+}
+section ul li:hover {
+    transform: scale(1.1);
+}
+.games-list img {
+    width: 90px;
+    border-radius: 8px;
+}
+.channel-list img{
+    width: 70px;
+    border-radius:50% ;
+    border: 1px solid #443E54;
+}
+/*Animation*/
+@keyframes fromTop {
+    from{ /* de onde vai partir */
+        opacity: 0; /* não vejo nada.*/
+        transform: translateY(-30px);
+    }
+    to{ /* para onde vai */
+        opacity: 1; /* vejo por completo*/
+        transform: translateY(0); /* lugar onde está*/
+    }
+}
+@keyframes fromBottom {
+    from {
+        opacity: 0;
+        transform:translateY(30px)
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
